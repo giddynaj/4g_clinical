@@ -1,0 +1,27 @@
+<div class='board-content'>
+
+<ng-template ngFor let-yitem [ngForOf]="y_positions" let-yidx="index">
+  <ng-template ngFor let-xitem [ngForOf]="x_positions" let-xidx="index">
+
+    <div id="{{ yitem + ':' + xitem }}">
+      {{ yitem + ':' + xitem  == this.location ? this.facingIcon : '&nbsp;' }}
+    </div>
+  </ng-template>
+</ng-template>
+
+</div>
+<div>
+Place (X Y Direction)<input #placeCmd (keyup.enter)="onPlaceSubmit($event);">
+</div>
+<div>
+<button #moveBtn (click)="onMoveClick($event);">Move</button>
+</div>
+<div>
+<button #leftBtn (click)="onLeftClick($event);">Left</button>
+</div>
+<div>
+<button #rightBtn (click)="onRightClick($event);">Right</button>
+</div>
+<div>
+<button #reportBtn (click)="onReportClick($event);">Report</button>
+</div>

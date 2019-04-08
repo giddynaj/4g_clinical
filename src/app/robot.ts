@@ -89,28 +89,31 @@ export class Robot {
   }
 }
 
-var board = new Board(5, 5); 
-let walle = new Robot(board);
+//Test Data
+if (typeof require != 'undefined' && require.main==module) {
+  var board = new Board(5, 5); 
+  let walle = new Robot(board);
 
-walle.move;
-console.log(walle.report());
-walle.move;
-console.log(walle.report());
+  walle.move;
+  console.log(walle.report());
+  walle.move;
+  console.log(walle.report());
 
-console.log(walle.report());
-walle.place(5, 5, 'NORTH')
-console.log(walle.report());
-walle.place(3, 4, 'NORTH')
-console.log(walle.report());
+  console.log(walle.report());
+  walle.place(5, 5, 'NORTH')
+  console.log(walle.report());
+  walle.place(3, 4, 'NORTH')
+  console.log(walle.report());
 
-walle.place(0,0,'NORTH');
-console.log(walle.report());
+  walle.place(0,0,'NORTH');
+  console.log(walle.report());
 
-for (var i in [1,2,3,4]) {
-  for (var j in [1,2,3,4,5]) {
-    walle.move();
+  for (var i in [1,2,3,4]) {
+    for (var j in [1,2,3,4,5]) {
+      walle.move();
+      console.log(walle.report());
+    }
+    walle.right()
     console.log(walle.report());
   }
-  walle.right()
-  console.log(walle.report());
 }
